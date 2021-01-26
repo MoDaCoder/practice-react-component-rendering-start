@@ -73,7 +73,15 @@ const planets = [
 const Planet = (props) => {
   return (
     <div className="card">
-      {props.planet}
+    <img src={props.url} alt={props.name}></img>
+    <h2>{props.name}</h2>
+    <p>{props.desc}</p>
+    <h3>Planet Profile</h3>
+    <ul>
+      <li><strong>{props.diameter}</strong></li>
+      <li><strong>{props.moons}</strong></li>
+    </ul>
+    {props.id}
     </div>
   );
 }
@@ -99,7 +107,7 @@ const App = (props) => {
 }
 
 // 3: Render the container component to the DOM
-ReactDom.render(
+ReactDOM.render(
   <App initialPlanets={planets}/>,
   document.getElementById('app')
 )
